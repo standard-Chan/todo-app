@@ -17,15 +17,16 @@ function App() {
       text : '리액트',
       checked : false,
     },
-    {
-      id : 3,
-      text : '집 알아보기',
-      checked : true,
-    }
   ]);
 
-  const nextId = useRef(4);
+  const [timerForTodo, setTimerForTodo] = useState({
+    todoId : 0,
+    displayed : false,
+  })
 
+  // id가 겹칠 수가 있음. 그래서 이후에 수정이 필요함.
+  const nextId = useRef(todos.length + 1);
+  
   const onInsert = useCallback(
     text => {
       const todo = {
@@ -35,14 +36,12 @@ function App() {
       };
       setTodos(todos.concat(todo));
       nextId.current += 1;
-    }, [todos]
-  );
+    }, [todos]);
 
   const onRemove = useCallback(
     id => {
       setTodos(todos.filter(todo => todo.id !== id))
-    }
-  )
+    }, [todos]);
 
   const onToggle = useCallback(id => {
     console.log('toggle');
@@ -52,12 +51,27 @@ function App() {
     setTodos(updatedTodo);
   }, [todos])
 
+  const onStart = useCallback(todo => {
+    setTimerForTodo({
+      id : todo.id,
+      text : todo.text,
+      displayed : true,
+    })
+  }, [timerForTodo]);
+
+  const onExitTimer = useCallback(() => {
+    setTimerForTodo({
+      ...timerForTodo,
+      displayed : false,
+    })
+  }, [timerForTodo]);
+
   return (
   <div>
     <TodoTemplate>
-      <Timer/>
+      {timerForTodo.displayed && <Timer timerForTodo={timerForTodo} onExitTimer={onExitTimer}/>}
       <TodoInsert onInsert={onInsert}/>
-      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle}/>
+      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} onStart={onStart}/>
     </TodoTemplate>
   </div>);
 }
