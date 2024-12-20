@@ -1,6 +1,7 @@
 import { 
   MdCheckBoxOutlineBlank,
-  MdCheckBox
+  MdCheckBox,
+  MdNotStarted
  } from 'react-icons/md';
 import { FaTrash } from "react-icons/fa";
 import './TodoListItem.scss';
@@ -14,6 +15,7 @@ const TodoListItem = ({todo, onRemove, onToggle}) => {
         {checked ? <MdCheckBox/> : <MdCheckBoxOutlineBlank/>}
         <div className='text'>{text}</div>
       </div>
+      <div className='start'><MdNotStarted/></div>
       <div className='remove' onClick={() => onRemove(todo.id)}>
         <FaTrash/>
       </div>

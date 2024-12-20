@@ -3,6 +3,7 @@ import './App.css';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import TodoTemplate from './components/TodoTemplate';
+import Timer from './components/Timer';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -54,6 +55,7 @@ function App() {
   return (
   <div>
     <TodoTemplate>
+      <Timer/>
       <TodoInsert onInsert={onInsert}/>
       <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle}/>
     </TodoTemplate>
