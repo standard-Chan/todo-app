@@ -10,6 +10,8 @@ const Timer = ({todo, timerForTodo, onExitTimer}) => {
     id : 0,
     total : 0,
     remaining : 0,
+    minutes : 0,
+    seconds : 0,
     elapsed : 0,
     inProgress : false,
     lock : false, // 실행 중 true => useEffect 불가
@@ -19,14 +21,21 @@ const Timer = ({todo, timerForTodo, onExitTimer}) => {
   
   useEffect(() => {
     if (time.inProgress && !time.lock){
+      // lock for other todo start
       setTime(prevTime => {return {...prevTime, lock : true}});
+
       intervalRef.current = setInterval(() => {
         setTime((prevTime) => {
+          // 시간이 다 되었을 경우
           if (prevTime.remaining < 1 ){
             clearInterval(intervalRef.current);
             return {...prevTime, inProgress: false, lock : false};
           }
-          return {...prevTime, remaining: prevTime.remaining -1, elapsed : prevTime.elapsed + 1};
+          // 시간 tick
+          if (prevTime.minutes > 0 && prevTime.seconds <= 0){
+            return {...prevTime, remaining: prevTime.remaining -1, elapsed : prevTime.elapsed + 1, minutes: prevTime.minutes-1, seconds: prevTime.seconds+59};
+          }
+          return {...prevTime, seconds: prevTime.seconds-1, remaining: prevTime.remaining -1, elapsed : prevTime.elapsed + 1};
         })
       }, 1000);
     }
@@ -66,7 +75,7 @@ const Timer = ({todo, timerForTodo, onExitTimer}) => {
         <div className='exit' onClick={onExitTimer}><RxCross2/></div>
         </div>
       <div className='time'>
-        { time.inProgress ? <h2>{time.remaining}</h2> : <TimerInsert setTimer={setTime}/>
+        { time.inProgress ? <h2>{`${String(time.minutes).padStart(2, '0')}:${String(time.seconds).padStart(2, '0')}`}</h2> : <TimerInsert setTime={setTime}/>
         }
       </div>
       { time.inProgress &&

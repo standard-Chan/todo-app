@@ -2,10 +2,9 @@
 # TodoList
 React TodoList
 =======
-<<<<<<< HEAD
-# TodoList
-React TodoList
-=======
+## 보완
+- 타이머 자동 입력
+- 타이머 입력시 자동 삭제기능
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
