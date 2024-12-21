@@ -1,0 +1,89 @@
+
+
+h1, h2, h3, h4 {
+  display: inline;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.Timer {
+  margin: 0 auto;
+  width: 350px;
+  height: 300px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.Timer .header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25px;
+  background-color: #ccc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  .text {
+    padding: 0;
+    flex: 1;
+    letter-spacing: 2.5px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .exit {
+    font-size: 24px;
+    &:hover {
+      color: #e47474;
+    }
+  }
+}
+
+.Timer .contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex : 1;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 230px;
+  background-color: #a6d3ff;
+  border-radius: 100px;
+  cursor: pointer;
+  .text {
+    line-height: 1px;
+    font-size: 2.5rem;
+  }
+}
+
+
+.bottom .inProgress {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 5px;
+  .pause, .play {
+    flex: 0.5;
+    font-size: 1.5rem;
+    text-align: center;
+    &:hover {
+      color: rgb(25, 124, 167);
+    }
+  }
+  .reset {
+    font-size: 1.5rem;
+    flex: 0.5;
+    text-align: center;
+    &:hover {
+      color: rgb(56, 175, 226);
+    }
+  }
+}

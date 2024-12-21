@@ -1,0 +1,32 @@
+.TimerInsert {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 275px;
+}
+
+.TimerInsert .content {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  .input {
+    flex: 1;
+    color: black;
+    text-align: center;
+    line-height: 1px;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+}
+
+.TimerInsert .button {
+  font-size: 1.5rem;
+  &:hover {
+    color: #528ee9;
+  }
+}

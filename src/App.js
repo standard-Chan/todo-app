@@ -24,18 +24,27 @@ function App() {
     displayed : false,
   })
 
-  // id가 겹칠 수가 있음. 그래서 이후에 수정이 필요함.
-  const nextId = useRef(todos.length + 1);
-  
+  // hash 함수 : 현재 날짜와 업무 내용으로 키 생성
+  const generateUniqueKey = async (date, str) => {
+    const input = `${date}-${str}`;
+    const encoder = new TextEncoder();
+    const data = encoder.encode(input);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+  };
+
   const onInsert = useCallback(
-    text => {
+    async text => {
+      const currentDate = new Date().toISOString();
+      const uniqueKey = await generateUniqueKey(currentDate, text);
       const todo = {
-        id : nextId.current,
+        id : uniqueKey,
         text : text,
         checked : false,
       };
       setTodos(todos.concat(todo));
-      nextId.current += 1;
     }, [todos]);
 
   const onRemove = useCallback(
