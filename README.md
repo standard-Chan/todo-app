@@ -1,79 +1,15 @@
-<<<<<<< HEAD
-# TodoList
-React TodoList
-=======
-## 보완
-- 타이머 자동 입력
-- 타이머 입력시 자동 삭제기능
-# Getting Started with Create React App
+# Todo list
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple 디자인의 todo list
+24.12.19 ~
 
-## Available Scripts
+# 서비스 소개
+저는 컴퓨터를 달고 삽니다. 그래서 할 일 목록을 적을 때, 메모장에 적어두곤 합니다. 그리고 그 할일들을 구글 타이머를 이용하여, 제한시간을 두면서 처리해나갑니다. 웹 개발을 처음하기도 하고, 나만의 커스텀 todo list를 만들어보고 싶다는 생각에 간단한 서비스를 개발하게 되었습니다.
 
-In the project directory, you can run:
 
-### `npm start`
+### 1. 타이머
+남은 시간을 가시화하여 직관적으로 볼 수 있게 만들고 싶었습니다. 그래야 다급한 마음에 더 집중할 수 있지 않을까?라는 생각 때문인지 모르겠네요. 그리고 타이머의 선택의 폭을 넓게 하고 싶었습니다. 많으면 많을수록 재밌지 않을까요?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 3262248 (Initial commit)
->>>>>>> 7382de2 (Initial commit)
+  1-1. timer timer
+  1-2. 모래시계
+  1-3. 디지털

@@ -3,7 +3,7 @@ import './App.css';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import TodoTemplate from './components/TodoTemplate';
-import Timer from './components/Timer';
+import Timer from './components/timer/Timer';
 
 function App() {
   const [todos, setTodos] = useState([
