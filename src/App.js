@@ -24,15 +24,24 @@ function App() {
   })
 
   // local storage 값 불러오기
-  useEffect(()=>{
-    const savedKeyList = localStorage.getItem('key');
-    if (savedKeyList) {
-      const keys = JSON.parse(savedKeyList);
-      const storedTodos = keys.map(key => JSON.parse(localStorage.getItem(key)));
-      setTodos(storedTodos);
-      setKeyList(keys);
+  useEffect(() => {
+    try {
+      const savedKeyList = localStorage.getItem('key');
+      console.log('saved : ', Array.isArray(savedKeyList));
+      if (savedKeyList) {
+        const keys = JSON.parse(savedKeyList);
+        const storedTodos = keys.map(key => {
+          console.log('key : ', key);
+          const item = localStorage.getItem(key);
+          return item ? JSON.parse(item) : null;
+        }).filter(todo => todo !== null);
+        setTodos(storedTodos);
+        setKeyList(keys);
+      }
+    } catch (error) {
+      console.error('Failed to parse JSON:', error);
     }
-  },[]);
+  }, []);
 
   useEffect(()=> {
     const savedTodos = keyList.map(key => localStorage.getItem(key));
@@ -66,7 +75,7 @@ function App() {
       setKeyList(removedKeyList);
       // localstorage 지우기
       localStorage.removeItem(id);
-      localStorage.setItem('key', removedKeyList);
+      localStorage.setItem('key', JSON.stringify(removedKeyList));
     }, [todos]);
 
   const onToggle = useCallback(id => {
