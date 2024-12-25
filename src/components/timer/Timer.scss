@@ -1,11 +1,9 @@
 
 
 h1, h2, h3, h4 {
-  display: inline;
   margin: 0 auto;
   padding: 0px;
 }
-
 .Timer {
   margin: 0 auto;
   width: 350px;
@@ -13,8 +11,16 @@ h1, h2, h3, h4 {
   position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: #f0f0f0;
+  background-color: #e3edff;
   border-radius: 5px;
+  border: solid 2px #2828280f;
+  &.paused {
+    background-color: #f7f2e9;
+  }
+
+  &.running {
+    background-color: #e3edff;
+  }
 }
 
 .Timer .header {
@@ -22,20 +28,22 @@ h1, h2, h3, h4 {
   align-items: center;
   width: 100%;
   height: 25px;
-  background-color: #ccc;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
   .text {
-    padding: 0;
+    margin-top: 2px;
+    margin-left: 7px;
+    border-radius: 2px;
     flex: 1;
-    letter-spacing: 2.5px;
-    text-align: center;
     line-height: 1;
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+    font-weight: 300;
   }
 
   .exit {
-    font-size: 24px;
+    font-size: 20px;
     &:hover {
       color: #e47474;
     }
@@ -50,18 +58,9 @@ h1, h2, h3, h4 {
 }
 
 .time {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-  width: 230px;
-  background-color: #a6d3ff;
-  border-radius: 100px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
-  .text {
-    line-height: 1px;
-    font-size: 2.5rem;
-  }
 }
 
 
@@ -74,6 +73,7 @@ h1, h2, h3, h4 {
     flex: 0.5;
     font-size: 1.5rem;
     text-align: center;
+    color: #042253;
     &:hover {
       color: rgb(25, 124, 167);
     }

@@ -58,7 +58,7 @@ const TimerInsert = ({ setTime }) => {
 
   return (
     <form className='TimerInsert' onSubmit={onSubmit} ref={formRef}>
-      <div className='content'>
+      <div className='timerInsert-content'>
         <input
           className='input'
           placeholder='00:00'

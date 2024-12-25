@@ -1,0 +1,28 @@
+.TimerView {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &.paused {
+    background-color: #f9f0df69;
+  }
+
+  &.running {
+    background-color: #e3edff;
+  }
+}
+.progress{
+  width: 100%;
+  height: 100%;
+}
+.progress-circle {
+  transition: stroke-dashoffset 1s linear;
+  cursor: pointer;
+}
+
+.time-display-text {
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #333;
+  background-color: black;
+}

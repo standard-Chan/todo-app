@@ -9,6 +9,7 @@ const TodoInsert = ({onInsert}) => {
     setValue(e.target.value);
   }, [])
 
+  // 현재 input 값을 todo에 추가
   const onSubmit = useCallback(
     e => {
       onInsert(value);

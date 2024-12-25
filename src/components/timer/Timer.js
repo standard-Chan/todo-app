@@ -4,6 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import { FaPause, FaPlay } from "react-icons/fa6";
 import './Timer.scss';
 import TimerInsert from './TimerInsert';
+import TimerView from './TimerView';
 
 const Timer = ({ todo, timerForTodo, onExitTimer }) => {
   const [time, setTime] = useState({
@@ -65,17 +66,15 @@ const Timer = ({ todo, timerForTodo, onExitTimer }) => {
   }, [])
 
   return (
-    <div className='Timer'>
+    <div className={`Timer ${time.inPause ? 'paused' : 'running'}`}>
       <div className='header'>
         <h3 className='text'>{timerForTodo.text}</h3>
         <div className='exit' onClick={onExitTimer}><RxCross2 /></div>
       </div>
       <div className='contents'>
         {time.inProgress ?
-          <div className='time' onClick={time.inPause ? onPlay : onPause}>
-            <h2 className='text'>{`${String(time.minutes).padStart(2, '0')}:${String(time.seconds).padStart(2, '0')}`}
-            </h2>
-          </div> : <div className='timerInsert'><TimerInsert setTime={setTime} /></div>
+            <TimerView time={time} onPlay={onPlay} onPause={onPause}/>
+          : <div className='timerInsert'><TimerInsert setTime={setTime} /></div>
         }
       </div>
       <div className='bottom'>
