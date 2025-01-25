@@ -24,7 +24,7 @@ const TimerView = ({ time, onPause, onPlay}) => {
         <circle
           className='progress-circle'
           onClick={time.inPause ? onPlay : onPause}
-          stroke={!time.inPause ? "skyBlue" : "rgb(4, 34, 83)"}
+          stroke={!time.inPause ? "#f1a053" : "rgb(4, 34, 83)"}
           strokeWidth="10"
           fill='transparent'
           cx={172}

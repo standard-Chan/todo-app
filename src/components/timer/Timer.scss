@@ -5,13 +5,13 @@ h1, h2, h3, h4 {
   padding: 0px;
 }
 .Timer {
-  margin: 0 auto;
+  margin: 5px 70px;
   width: 350px;
   height: 300px;
   position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: #e3edff;
+  background-color: #fffde3;
   border-radius: 5px;
   border: solid 2px #2828280f;
   &.paused {
@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
   }
 
   &.running {
-    background-color: #e3edff;
+    background-color: #ffffe3;
   }
 }
 
@@ -73,9 +73,9 @@ h1, h2, h3, h4 {
     flex: 0.5;
     font-size: 1.5rem;
     text-align: center;
-    color: #042253;
+    color: #532d04;
     &:hover {
-      color: rgb(25, 124, 167);
+      color: rgb(136, 148, 154);
     }
   }
   .reset {
@@ -83,7 +83,7 @@ h1, h2, h3, h4 {
     flex: 0.5;
     text-align: center;
     &:hover {
-      color: rgb(56, 175, 226);
+      color: rgb(226, 209, 56);
     }
   }
 }
